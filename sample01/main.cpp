@@ -87,7 +87,7 @@ void GameRun(HWND hWnd)
 	if (d3ddv->BeginScene()) 
 	{
 		// Clear back buffer with BLACK
-		d3ddv->ColorFill(back_buffer,NULL,D3DCOLOR_XRGB(255,255,254));
+		d3ddv->ColorFill(back_buffer,NULL,D3DCOLOR_XRGB(255,255,0));
 		
 		// Random color for the surface
 	/*	int r = rand() % 255; 
