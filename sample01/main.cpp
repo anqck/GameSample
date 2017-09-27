@@ -196,13 +196,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	GameInit(hInstance, hWnd);
 
-	// Enter game message loop
+	// Enter game message loopnj
 	MSG msg;
 	int done = 0;
 	DWORD frame_start = GetTickCount();;
 	DWORD tick_per_frame = 1000 / FRAME_RATE;
 
-	rect.left = 100;
+
+	int abc;
+	rect.left = 50;
 	rect.top = 100;
 	rect.right = rect.left + 100;
 	rect.bottom = rect.top+ 100;
