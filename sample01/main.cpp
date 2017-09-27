@@ -95,7 +95,7 @@ void GameRun(HWND hWnd)
 		int b = rand() % 255;*/
 		int r = 0;
 		int g = 255;
-		int b =  0;
+		int b =  255;
 
 		// Fill the bitmap
 		d3ddv->ColorFill(surface,NULL,D3DCOLOR_XRGB(r,g,b));
