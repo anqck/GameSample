@@ -8,7 +8,7 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
-#define FRAME_RATE 30
+#define FRAME_RATE 60
 
 #define KEY_DOWN(vk_code)((GetAsyncKeyState(vk_code)&0xB000)?1:0)
 
@@ -44,7 +44,7 @@ int GameInit(HINSTANCE hInstance, HWND hWnd)
 
 	ZeroMemory( &d3dpp, sizeof(d3dpp) );
 
-	d3dpp.Windowed   = TRUE; // FALSE;
+	d3dpp.Windowed   = FALSE; // FALSE;
 	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
 	d3dpp.BackBufferFormat = D3DFMT_X8R8G8B8;
 	d3dpp.BackBufferCount = 1;
@@ -87,15 +87,15 @@ void GameRun(HWND hWnd)
 	if (d3ddv->BeginScene()) 
 	{
 		// Clear back buffer with BLACK
-		d3ddv->ColorFill(back_buffer,NULL,D3DCOLOR_XRGB(0,0,0));
+		d3ddv->ColorFill(back_buffer,NULL,D3DCOLOR_XRGB(255,255,254));
 		
 		// Random color for the surface
-		int r = rand() % 255; 
+	/*	int r = rand() % 255; 
 		int g = rand() % 255; 
-		int b = rand() % 255;
-		/*int r = 0;
+		int b = rand() % 255;*/
+		int r = 0;
 		int g = 255;
-		int b =  0;*/
+		int b =  0;
 
 		// Fill the bitmap
 		d3ddv->ColorFill(surface,NULL,D3DCOLOR_XRGB(r,g,b));
@@ -126,6 +126,7 @@ void GameRun(HWND hWnd)
 			if (rect.left <= 0)
 				dir = Right;
 		}
+		
 
 		// Draw the surface onto the back buffer
 		d3ddv->StretchRect(
@@ -196,7 +197,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	GameInit(hInstance, hWnd);
 
-	// Enter game message loop
+	// Enter game message loop...
 	MSG msg;
 	int done = 0;
 	DWORD frame_start = GetTickCount();;
@@ -229,4 +230,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	GameEnd();
 	return 0;
+}
+
+void ABC()
+{
+
 }
